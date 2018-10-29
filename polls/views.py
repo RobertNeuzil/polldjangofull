@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Poll 
+from .models import Poll, Newspaper 
 
 
 def polls_list(request):
@@ -11,7 +11,8 @@ def polls_list(request):
 
 	'''
 	polls = Poll.objects.all()
-	context = { 'polls': polls }
+	newspaper = Newspaper.objects.all()
+	context = { 'polls': polls, 'newspaper': newspaper }
 	return render(request, 'polls/pollslist.html', context)
 
 # Create your views here.

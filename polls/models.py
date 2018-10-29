@@ -18,4 +18,17 @@ class Choice(models.Model):
 
 
 	
-		
+class Newspaper(models.Model):
+	article = models.TextField(max_length=650)
+	reporter = models.CharField(max_length=100)
+	name = models.CharField(max_length=200)
+
+	def __str__(self):
+		return f'{self.name} - {self.article[:20]} '
+
+class Partisanlean(models.Model):
+	publication_name = models.ForeignKey(Newspaper, on_delete=models.CASCADE)
+	partisan = models.BooleanField() 
+
+	def __str__(self):
+		return f'{self.publication_name}'

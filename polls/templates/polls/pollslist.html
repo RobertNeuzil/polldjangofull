@@ -14,5 +14,18 @@
 		</ul>
 	{% endfor %}
 	</ul>
+<div class="container">
+	<ul>
+	{% for x in newspaper %}
+		<li>
+		{{ x.article }} 
+		<br>--
+		{{ x.reporter }}
+
+		<hr>
+		</li>
+	{% endfor %}
+	</ul>
+</div>
 </div>
 {% endblock %}
