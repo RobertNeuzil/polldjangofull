@@ -3,5 +3,11 @@
 
 
 {% block content %}
-<h1> Welcome to Polls List </h1>
+<div class="container">
+	<ul>
+	{% for poll in polls  %}
+	<li> {{ poll }} </li>
+	{% endfor %}
+	</ul>
+</div>
 {% endblock %}
